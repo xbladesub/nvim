@@ -11,7 +11,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "https://github.com/wbthomason/packer.nvim",
     install_path,
   }
-  print "Installing packer close and reopen Neovim..."
+  print "Installing dfasfasdfsaacker close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -60,11 +60,12 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use "sindrets/diffview.nvim"
   use 'gelguy/wilder.nvim'
-  use 'ryanoasis/vim-devicons'
+  use 'nixprime/cpsm'
+  use 'romgrk/fzy-lua-native'
 
   -- Colorscheme
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  -- Using Packer
+use 'navarasu/onedark.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
