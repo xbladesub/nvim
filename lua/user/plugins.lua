@@ -58,7 +58,6 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
-  use "sindrets/diffview.nvim"
   use 'gelguy/wilder.nvim'
   use 'nixprime/cpsm'
   use 'romgrk/fzy-lua-native'
