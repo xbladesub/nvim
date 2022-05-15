@@ -64,7 +64,7 @@ return packer.startup(function(use)
 
   -- Colorscheme
   -- Using Packer
-use 'navarasu/onedark.nvim'
+  use 'navarasu/onedark.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
