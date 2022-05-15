@@ -4,7 +4,7 @@ wilder.setup({modes = {':', '/', '?'}})
 wilder.set_option('pipeline', {
   wilder.branch(
     wilder.python_file_finder_pipeline({
-      file_command = function(ctx, arg)
+      file_command = function(_, arg)
         if string.find(arg, '.') ~= nil then
           return {'fdfind', '-tf', '-H'}
         else
@@ -27,7 +27,7 @@ wilder.set_option('pipeline', {
       fuzzy_filter = wilder.lua_fzy_filter(),
     }),
     {
-      wilder.check(function(ctx, x) return x == '' end),
+      wilder.check(function(_, x) return x == '' end),
       wilder.history(),
     },
     wilder.python_search_pipeline({
@@ -77,7 +77,9 @@ local popupmenu_renderer = wilder.popupmenu_renderer(
 )
 
 local wildmenu_renderer = wilder.wildmenu_renderer({
-  highlighter = highlighters,
+  highlighter = wilder.highlighter_with_gradient({
+      wilder.lua_fzy_highlighter(), -- or wilder.lua_fzy_highlighter(),
+    }),
   separator = ' · ',
   left = {' ', wilder.wildmenu_spinner(), ' '},
   right = {' ', wilder.wildmenu_index()},
